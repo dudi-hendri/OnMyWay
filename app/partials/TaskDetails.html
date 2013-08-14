@@ -1,0 +1,26 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+          <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">Task</h1>
+    </div>
+</div>
+
+<div class='details'>
+    <h1><%= title %></h1>
+    <h2><%= description %></h2>
+    <h2><%= frequency %></h2>
+    <h2><%= startTime %></h2>
+    <h2><%= endTime %></h2>
+    <h2><%= isDone %></h2>
+    <span class="location">
+        latitude: <%= latitude%>
+        longitude: <%= longitude%>
+    </span>
+    <div id="googleMapBox" class="googleMapBox">
+
+    </div>
+</div>

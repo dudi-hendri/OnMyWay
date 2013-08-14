@@ -1,0 +1,24 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">Geo Task List</h1>
+    </div>
+</div>
+<div class="search-bar">
+    <!--<input type="text" ng-model="search" class="search-query" placeholder="Search">-->
+    <input ng-model="search" type="search" placeholder="search" class="topcoat-search-input search-key" style="width:100%;">
+</div>
+<div ng-controller="TaskListCtrl">
+    <span>{{remaining()}} of {{tasks.length}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+        <li ng-repeat="task in tasks | filter:{title:search} | orderBy:'endTime'">
+            <input type="checkbox" ng-model="task.isDone">
+            <span class="done-{{task.done}}"><a href="#{{task.id}}" target="_blank">{{task.title}}</a></span>
+        </li>
+    </ul>
+    <form ng-submit="addTask()">
+        <input type="text" ng-model="taskTitle"  size="30"
+               placeholder="add new task here">
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+</div>
